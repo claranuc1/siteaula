@@ -94,7 +94,7 @@ links.forEach(function(link) {
             conteudo.innerHTML = `
                 <h2>Cadastro - ONG Esperança</h2>
 
-                <div id="mensagem-sucesso" class="alerta" style="display: none;">
+                <div id="mensagem-sucesso" class="alerta" style="display: none;" role="alert" aria-live="polite">
                     <strong>Cadastro realizado com sucesso!</strong>
                     Obrigado por fazer parte da ONG Esperança.
                 </div>
