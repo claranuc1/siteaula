@@ -1,0 +1,440 @@
+:root {
+    /* Cores */
+    --cor-primaria: #2E7D32;
+    --cor-secundaria: #66BB6A;
+    --cor-destaque: #FFB300;
+    --cor-fundo: #F5F5F5;
+    --cor-branca: #FFFFFF;
+    --cor-texto: #212121;
+    --cor-texto-secundario: #616161;
+    --cor-borda: #D6D6D6;
+
+    /* Tipografia */
+    --fonte-h1: 2.5rem;
+    --fonte-h2: 2rem;
+    --fonte-h3: 1.5rem;
+    --fonte-texto: 1rem;
+    --fonte-pequena: 0.875rem;
+
+    /* Espaçamentos */
+    --espaco-1: 4px;
+    --espaco-2: 8px;
+    --espaco-3: 16px;
+    --espaco-4: 24px;
+    --espaco-5: 32px;
+    --espaco-6: 48px;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--espaco-3);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--espaco-3);
+}
+/* 1 - Celulares pequenos */
+@media (max-width: 320px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 2 - Celulares */
+@media (min-width: 321px) and (max-width: 480px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 3 - Tablets pequenos */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 4 - Tablets e notebooks */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+/* 5 - Desktops */
+@media (min-width: 1025px) {
+    .container {
+        grid-template-columns: repeat(12, 1fr);
+    }
+}
+/* Flexbox */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Estados dos botões */
+
+button {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    border: 1px solid var(--cor-primaria);
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--cor-secundaria);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 2px;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    background-color: var(--cor-borda);
+    color: var(--cor-texto-secundario);
+    border-color: var(--cor-borda);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+
+/* Campos do formulário */
+
+input {
+    padding: 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: var(--cor-primaria);
+    outline: 2px solid var(--cor-secundaria);
+}
+
+
+/* Validação visual */
+
+input:focus:valid {
+    border-color: var(--cor-secundaria);
+}
+
+input:focus:invalid {
+    border-color: var(--cor-destaque);
+}
+.menu-hamburguer {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-hamburguer {
+        display: flex;
+    }
+}
+/* Cabeçalho */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Hambúrguer escondido no computador */
+button.menu-hamburguer {
+    display: none;
+}
+/* Menu em telas pequenas */
+@media (max-width: 768px) {
+
+    button.menu-hamburguer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+/* Aplicação das cores do Design System */
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    padding: var(--espaco-3);
+}
+
+/* Título do cabeçalho */
+header h1 {
+    color: var(--cor-branca);
+}
+
+/* Links do menu */
+nav a {
+    color: var(--cor-branca);
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--cor-destaque);
+}
+
+/* Conteúdo principal */
+.container {
+    background-color: var(--cor-branca);
+}
+
+/* Títulos */
+h1 {
+    color: var(--cor-primaria);
+}
+
+h2 {
+    color: var(--cor-primaria);
+}
+
+/* Textos secundários */
+.contato p {
+    color: var(--cor-texto-secundario);
+}
+
+/* Imagens */
+img {
+    max-width: 100%;
+}
+
+/* Submenu */
+.submenu {
+    background-color: var(--cor-branca);
+    border: 1px solid var(--cor-borda);
+}
+
+.submenu a {
+    color: var(--cor-texto);
+}
+
+.submenu a:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+}
+/* Organização do menu */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav > a,
+.dropdown > a {
+    color: var(--cor-branca);
+    text-decoration: none;
+}
+
+/* Item Projetos */
+.dropdown {
+    position: relative;
+}
+
+/* Submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    background-color: var(--cor-primaria);
+    border: 1px solid var(--cor-borda);
+    padding: 8px;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 10;
+}
+
+/* Mostra o submenu ao passar o mouse em Projetos */
+.dropdown:hover .submenu {
+    display: flex;
+}
+
+/* Links dentro do submenu */
+.submenu a {
+    color: var(--cor-branca);
+    text-decoration: none;
+    padding: 8px;
+}
+
+/* Efeito ao passar o mouse */
+.submenu a:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+}
+/* Tamanho da imagem da página inicial */
+
+main section:first-child img {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+    margin: 24px auto;
+}
+/* Organização da página inicial */
+
+.container {
+    display: block;
+}
+
+.container section {
+    margin-bottom: 32px;
+}
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+    font-size: var(--fonte-pequena);
+}
+
+/* Alertas */
+.alerta {
+    padding: var(--espaco-3);
+    margin: var(--espaco-3) 0;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 4px;
+    background-color: #FFF8E1;
+    color: var(--cor-texto);
+}
+
+/* Toast */
+.toast {
+    padding: var(--espaco-3);
+    border-radius: 4px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+/* Componentes de feedback */
+
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+    font-size: var(--fonte-pequena);
+}
+
+.alerta {
+    display: block;
+    padding: 16px;
+    margin: 16px 0;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 4px;
+    background-color: #FFF8E1;
+    color: var(--cor-texto);
+}
+
+.toast {
+    display: block;
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 4px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+}
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+    font-size: var(--fonte-pequena);
+}
+.alerta {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+
+    padding: 16px 20px;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 6px;
+
+    background-color: #FFF8E1;
+    color: var(--cor-texto);
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+}
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+
+    padding: 12px 20px;
+    border-radius: 6px;
+
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}

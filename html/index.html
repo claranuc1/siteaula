@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONG Esperança</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>ONG Esperança</h1>
+
+        <button class="menu-hamburguer" aria-label="Abrir menu">
+            ☰
+        </button>
+
+        <nav>
+    <a href="#inicio">Início</a>
+
+    <div class="dropdown">
+        <a href="#projetos">Projetos</a>
+
+        <div class="submenu">
+            <a href="#doacoes">Doações</a>
+            <a href="#voluntariado">Voluntariado</a>
+        </div>
+    </div>
+
+    <a href="#cadastro">Cadastro</a>
+</nav>
+    </header>
+
+    <main class="container">
+<div id="conteudo">
+        <section>
+            <h2>ONG Esperança</h2>
+
+            <img src="../imagens/imagens do projeto/ong.jpeg"
+                 alt="Voluntários da ONG se unindo para ajudar o próximo.">
+
+            <p>
+                A ONG Esperança atua na promoção de ações sociais
+                e no apoio à comunidade.
+            </p>
+        </section>
+
+        <section class="contato">
+            <h2>Entre em contato</h2>
+
+            <p>E-mail: contato@ongesperanca.org</p>
+            <p>Telefone: (41) 99999-9999</p>
+            <p>Endereço: Curitiba - PR</p>
+        </section>
+
+
+    <!-- Componentes de feedback -->
+
+    <h2>Informações</h2>
+
+
+
+
+
+    <button id="botao-voluntario" type="button">
+    Quero ser voluntário
+</button>
+
+<div id="toast" class="toast" style="display: none;">
+    Interesse registrado com sucesso!
+</div>
+
+</div>
+</main>
+<script>
+    const botaoVoluntario = document.getElementById("botao-voluntario");
+    const toast = document.getElementById("toast");
+
+    botaoVoluntario.addEventListener("click", function() {
+        toast.style.display = "block";
+
+        setTimeout(function() {
+            toast.style.display = "none";
+        }, 5000);
+    });
+</script>
+<script type="module" src="../js/script.js"></script>
+</body>
+
+</html>
+
